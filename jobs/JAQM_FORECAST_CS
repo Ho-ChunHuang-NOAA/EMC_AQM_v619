@@ -92,9 +92,7 @@ if [ "${FLAG_RUN_FCST}" == "YES" ]; then
    export err=$?; err_chk
 fi
 ##################################################
-if [ -e "${pgmout}" ]; then
-   cat ${pgmout}
-fi
+if [ -s ${pgmout} ]; then cat ${pgmout}; fi
 
 msg="JOB $job HAS COMPLETED NORMALLY."
 postmsg   "${msg}"

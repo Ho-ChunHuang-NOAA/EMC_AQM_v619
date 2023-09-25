@@ -98,6 +98,7 @@ while [ ${icnt} -le ${tend} ]; do
    while [ ${icnt_gfs} -lt 300 ]; do
       if [ -s ${targte_file} ]; then
          echo "Found file : ${targte_file}"
+         echo "Found file : ${COMINgfs}/gfs.${cycle}.logf${fhr}.nc"
          break
       else
          echo "===== Waiting for file : ${targte_file}"
