@@ -41,11 +41,12 @@ else
     fi
 fi
 
+## file arived around 02:00Z beore 00Z cycle run from 10/01-10/04, so deactivate the following clause to be consistent with operational
 ##
 ## In operational yesterday's GBBEPX fire emission (PDYm1) won't be available till 08Z.
 ## Thus it is not available for the 00z cycle run. 00z run has to use the two-day old fire emission info,
 ## i.e., ${COMINfirem2}/${fire_emission_hdr}_s${PDYm2}0000000_e${PDYm2}2359590*.nc
-if [ "${RUN_ENVIR}" != "nco" ] && [ "${cyc}" == "00" ]; then
+if [ 1 -eq 2 ] && [ "${RUN_ENVIR}" != "nco" ] && [ "${cyc}" == "00" ]; then
     if [ "${FIREDATE}" == "${PDYm1}" ]; then
         echo "++++++++++++++++++ WARNING +++++++++++++++++++++++++++++++"
         echo "This may happen in the retro or re-run of ${PDY} 00z cycle"
